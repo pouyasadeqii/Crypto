@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import Landing from './components/Landing';
+import Landing from "./components/Landing";
 
 const App = () => {
   return (
