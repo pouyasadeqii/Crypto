@@ -3,7 +3,7 @@ import React from "react";
 // Styles
 import styles from "./Coin.module.css";
 
-const Coin = ({ name, image, symbol, price, marketCap, priceChange }) => {
+const Coin = ({ name, image, symbol, price, marketCap, price_change_24h }) => {
   return (
     <div className={styles.container}>
       <img className={styles.image} src={image} alt={name} />
@@ -12,11 +12,12 @@ const Coin = ({ name, image, symbol, price, marketCap, priceChange }) => {
       <span className={styles.currentPrice}>$ {price.toLocaleString()}</span>
       <span
         className={
-          priceChange > 0 ? styles.greenPriceChange : styles.redPriceChange
+          price_change_24h > 0
+            ? styles.greenprice_change_24h
+            : styles.redprice_change_24h
         }
       >
-        {" "}
-        {priceChange.toFixed(2)}%{" "}
+        {price_change_24h?.toFixed(2)}%
       </span>
       <span className={styles.marketCap}>$ {marketCap.toLocaleString()}</span>
     </div>
